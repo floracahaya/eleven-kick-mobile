@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 
-/// Reusable product action menu with three buttons:
 /// - All Products (blue)
 /// - My Products (green)
 /// - Create Product (red)
-///
-/// Each callback is optional; when not provided the widget shows a SnackBar
-/// describing the pressed action.
+
 class ProductActionMenu extends StatelessWidget {
   final VoidCallback? onAll;
   final VoidCallback? onMine;
