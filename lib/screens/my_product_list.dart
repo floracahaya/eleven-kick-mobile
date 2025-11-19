@@ -16,11 +16,8 @@ class MyProductListPage extends StatefulWidget {
 class _MyProductListPageState extends State<MyProductListPage> {
   Future<List<ProductEntry>> fetchMyProducts(CookieRequest request) async {
     try {
-      // Debug: print cookies before fetching
-      debugPrint('DEBUG: COOKIES before fetchMyProducts: ${request.cookies}');
       // Fetch user's products from the my-products endpoint
       final response = await request.get('http://localhost:8000/my-products/');
-      debugPrint('DEBUG RAW RESPONSE: ${response.toString()}');
 
       // Guard HTML
       if (response is String && response.trim().startsWith('<')) {

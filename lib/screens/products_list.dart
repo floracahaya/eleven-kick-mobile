@@ -18,13 +18,8 @@ class ProductsListPage extends StatefulWidget {
 class _ProductsListPageState extends State<ProductsListPage> {
   Future<List<ProductEntry>> fetchProducts(BuildContext context) async {
     final request = Provider.of<CookieRequest>(context, listen: false);
-    debugPrint(
-      'DEBUG ProductsListPage: request.loggedIn = ${request.loggedIn}',
-    );
-    debugPrint('DEBUG ProductsListPage: request.cookies = ${request.cookies}');
     if (request.loggedIn) {
       // Jika login, fetch dari /my-products/ pakai CookieRequest
-      debugPrint('DEBUG: Fetching /my-products/');
       final response = await request.get('http://localhost:8000/my-products/');
       // Guard HTML
       if (response is String && response.trim().startsWith('<')) {

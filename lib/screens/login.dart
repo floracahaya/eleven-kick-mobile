@@ -106,13 +106,6 @@ class _LoginPageState extends State<LoginPage> {
                         {'username': username, 'password': password},
                       );
 
-                      // Debug: print login status and cookies
-                      // ignore: avoid_print
-                      print(
-                        'DEBUG: request.loggedIn after login: ${request.loggedIn}',
-                      );
-                      print('DEBUG: COOKIES AFTER LOGIN: ${request.cookies}');
-
                       // Only consider login success if backend status==true
                       final bool loginSuccess = (response['status'] == true);
                       if (loginSuccess && request.loggedIn) {
